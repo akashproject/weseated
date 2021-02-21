@@ -1,5 +1,7 @@
 {
   "name": "weseated",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
