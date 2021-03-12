@@ -1,0 +1,30 @@
+.my_profile_content_back{
+    width: 100%; display: block; padding-top: 2rem;
+    .common_head{
+        ion-toolbar{
+            --ion-background-color: transparent;
+            ion-buttons{
+                position: relative;
+                span{
+                   width: 15px; height: 15px; padding: 3px; border-radius: 100%; background-color: #fbd127; display: flex; justify-content: center; align-items: center; position: absolute; top: 6px; right: 0;
+                }
+             }
+        }
+    }
+    .common_details_back{
+        width: 100%; display: block;
+        ion-item{
+            box-shadow: rgba(0,0,0,.2) 1px 0 10px; border-radius: 5px; position: relative; width: 100%; padding: 1rem 1rem 1rem 2rem; margin-bottom: 1.5rem;
+            ion-label{
+                padding: 5px 0; font-family: 'sansation-bold';
+            }
+            ion-icon{
+                 margin: 0 1rem 0 0;
+                 &.arrow{
+                     position: absolute; top: 0; bottom: 0; right: 0; margin: auto;
+                 }
+            }
+        }
+    }
+
+}

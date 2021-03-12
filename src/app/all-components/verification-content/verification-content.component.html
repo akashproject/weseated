@@ -1,0 +1,34 @@
+<div class="verification_content_back">
+  <div class="common_head">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+    <h1>Verification</h1>
+  </div>
+  <div class="common_details_back">
+    <img src="assets/images/verification.svg" alt="">
+    <p>Enter your <span>VERIFICATION CODE</span><br />we have just sent you on your mobile number</p>
+    <div class="opt_details">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input></ion-input>
+          </ion-col> 
+          <ion-col>
+            <ion-input></ion-input>
+          </ion-col> 
+          <ion-col>
+            <ion-input></ion-input>
+          </ion-col> 
+          <ion-col>
+            <ion-input></ion-input>
+          </ion-col>         
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="clear"></div>
+    <ion-button expand="full" class="resend" fill="clear">Re-Send</ion-button>
+    <div class="clear"></div>
+    <ion-button expand="full" class="verify" fill="clear" [routerLink]="['/home']" routerLinkActive="router-link-active"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+  </div>
+</div>

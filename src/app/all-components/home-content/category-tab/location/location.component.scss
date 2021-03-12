@@ -1,0 +1,40 @@
+.main_location_back{
+    width: 100%; display: block; margin-top: 1rem; padding-left: 0; position: relative; padding-bottom: 0; border-bottom: #ddd 1px solid; ;
+    .clock_back{
+       position: absolute; top: 13px; left: 0;  width: 5.2rem; height: 4.7rem; background-color: #000; border-radius: 1.2rem 0 1.2rem 1.2rem; display: flex; align-items: center; justify-content: center;
+    }
+    .main{
+        width: 100%;
+    }
+    .portion{
+        width: 100%; display: block; padding-left: 7.6rem;
+        h5{
+            color: #333; font-size: 1.6rem; display: block; margin: 0; text-align: left;
+        }
+        .details{
+            width: 100%; display: block;
+            ul{
+                display: flex; align-items: center; margin: 0; padding: 0; width: 100%;
+                li{
+                    list-style: none; margin-right: 1rem; padding-right: 1rem; font-size: 1rem; display: flex; align-items: center; position: relative;
+                    &:last-child{
+                        margin-right: 0;
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    &:after{
+                        content: "|"; position: absolute; top: 0; bottom: 0; margin: auto; right: 0;
+                    }
+                    img{
+                        height: 12px;
+                    }
+                }
+            }
+            
+        }
+    }
+}
+.swiper-slide{
+    padding: 19px 0;
+}

@@ -1,0 +1,42 @@
+.verification_content_back{
+    width: 100%; display: block; 
+    
+    .common_details_back{
+        text-align: center;
+        img{
+            width: 80%; display: inline-block;
+        }
+        p{
+            width: 100%; font-size: 1.5rem; line-height: 2.6rem; 
+            span{
+                color: #fc3451;
+            }
+        }
+        .opt_details{
+            width: 60%; display: inline-block;
+            ion-grid{
+                width: 100%;
+                ion-input{
+                    width: 100%; height: 9rem; border: #fc3451 3px solid; text-align: center; padding: 0 !important; font-size: 2rem;
+                }
+            }
+        }
+        ion-button{            
+            &.resend{
+                color:#fc3451 ; background-color: transparent !important; width: 12rem; height: 3.85rem; display: inline-block;
+            }
+        }
+        ion-button{
+            &.verify{
+                width: 5rem; height: 5rem; border-radius: 100%; display: inline-block;
+                ion-icon{
+                    color: #fff;
+                }
+            }
+        }
+        
+    }
+}
+.clear {
+    clear: both;
+}

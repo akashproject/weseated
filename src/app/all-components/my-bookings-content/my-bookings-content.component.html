@@ -1,0 +1,29 @@
+<div class="mybookings_content_back">
+  <div class="common_head_cover">
+    <div class="common_head">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/" text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons slot="end" [routerLink]="['/notification']" routerLinkActive="router-link-active">
+          <img src="assets/images/head_noti.png" alt="">
+          <span>2</span>
+      </ion-buttons>
+      </ion-toolbar>
+      <h1>My Bookings</h1> 
+      <ul>
+        <li [routerLink]="['/my-bookings/booked']" routerLinkActive="router-link-active">
+          <ion-button shape="round" fill="clear">Booked <ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
+        </li>
+        <li [routerLink]="['/my-bookings/cancelled']" routerLinkActive="router-link-active">
+          <ion-button shape="round" fill="clear">Cancelled <ion-icon name="bag-remove-outline"></ion-icon></ion-button></li>
+      </ul>   
+    </div>
+  </div>  
+
+</div>
+
+<ion-content>
+  <ion-router-outlet id="main"></ion-router-outlet>  
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header no-shadow>
+  <header class="header">
+    <ion-toolbar color="custom" lines="no-lines" class="no-border">
+      <ion-buttons slot="start">
+        <ion-menu-button> <img src='assets/images/menu_icon.png'> </ion-menu-button> 
+      </ion-buttons>
+      <ion-buttons slot="end" [routerLink]="['/notification']" routerLinkActive="router-link-active">
+          <img src="assets/images/head_noti.png" alt="">
+          <span>2</span>
+      </ion-buttons>
+    </ion-toolbar>
+  </header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-home-content></app-home-content>
+</ion-content>

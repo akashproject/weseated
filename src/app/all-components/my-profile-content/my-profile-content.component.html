@@ -1,0 +1,57 @@
+<div class="my_profile_content_back">
+  <div class="common_head_cover">
+    <div class="common_head">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/" text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons slot="end" [routerLink]="['/notification']" routerLinkActive="router-link-active">
+          <img src="assets/images/head_noti.png" alt="">
+          <span>2</span>
+      </ion-buttons>
+      </ion-toolbar>
+      <h1>My Profile</h1>         
+    </div>
+  </div> 
+  <div class="common_details_back">
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/my-profile/edit-profile']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="create-outline"></ion-icon>
+      <ion-label>Your Orders</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/my-profile/wallet']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="wallet-outline"></ion-icon>
+      <ion-label>Wallet</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/my-profile/cards']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="card-outline"></ion-icon>
+      <ion-label>Cards</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/my-profile/help-support']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+      <ion-label>Help & Support</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/my-profile/settings']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="cog-outline"></ion-icon>
+      <ion-label>Settings</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+    <ion-item lines="none" color="custom" class="ion-no-padding" [routerLink]="['/home']" routerLinkActive="router-link-active" >
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      <ion-label>Logout</ion-label>
+      <ion-icon slot="end" class="arrow" name="chevron-forward-outline"></ion-icon>
+    </ion-item>
+
+  </div> 
+
+</div>
+
+

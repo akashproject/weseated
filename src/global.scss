@@ -24,3 +24,144 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+
+@font-face {
+  font-family: 'sansation-regular';
+  src:local('sansation-regular'), url(./assets/fonts/Sansation-Regular.ttf);
+}
+@font-face {
+  font-family: 'sansation-light';
+  src:local('sansation-light'), url(./assets/fonts/Sansation-Light.ttf);
+}
+@font-face {
+  font-family: 'sansation-bold';
+  src:local('sansation-bold'), url(./assets/fonts/Sansation-Bold.ttf);
+}
+html{
+  font-size: 62.5%;
+}
+body{
+     font-family: 'sansation-regular'; line-height: 1rem;
+    --ion-background-color: #fa2a4a;
+    --ion-background-color: -moz-linear-gradient(top,  #fa2a4a 0%, #fa2a4a 64%, #ffffff 72%, #ffffff 100%); 
+    --ion-background-color: -webkit-linear-gradient(top,  #fa2a4a 0%,#fa2a4a 64%,#ffffff 72%,#ffffff 100%); 
+    --ion-background-color: linear-gradient(to bottom,  #fa2a4a 0%,#fa2a4a 64%,#ffffff 72%,#ffffff 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa2a4a', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    
+}
+.header-md::after{
+  background-image: none !important;
+}
+ion-menu-button{
+  width: auto; 
+}
+ion-header{
+  padding: 5rem 1rem 0; background-color: #fa2a4a;
+}
+.picker-opt{
+  color: #fff !important;
+}
+.picker-toolbar-button{
+  margin-right: 1rem;
+}
+.picker-button{
+  color: #000 !important;
+  background-color: #ffea39 !important;font-size: 1.2rem !important; padding: 0 2rem !important; height:3rem !important
+ 
+}
+.picker-toolbar{
+  margin-top: 1rem;
+}
+
+.alert-radio-label{
+  color: #fff !important;
+}
+.alert-radio-icon {
+  border-color:  #ffea39 !important;
+}
+.alert-radio-inner{
+  background-color: #ffea39 !important;;
+}
+
+.alert-button{
+  color: #000 !important;
+  background-color: #ffea39 !important;  font-size: 1.2rem !important; padding: 0 2rem !important; height:3rem !important
+}
+.swiper-container-3d .swiper-slide-shadow-right{
+  background-image: none !important;
+}
+.swiper-container-3d .swiper-slide-shadow-left{
+  background-image: none !important;
+}
+
+  
+ ion-menu{
+  --background: var(--ion-color-custom) !important; 
+ }  
+
+ .picker-wrapper.sc-ion-picker-md{
+  --background: var(--ion-color-custom2) !important; 
+ }
+ .alert-wrapper.sc-ion-alert-md{
+  --background: var(--ion-color-custom2) !important;
+ }
+
+ .alert-radio-group.sc-ion-alert-md{
+  border-top: rgba(255,255,255,.1) 1px solid !important;
+  border-bottom: rgba(255,255,255,.1) 1px solid !important;
+ }
+
+app-login.ion-page{
+  --ion-background-color: #fff !important;
+}
+app-verification.ion-page{
+  --ion-background-color: #fff !important;
+}
+app-notification.ion-page{
+  --ion-background-color: #fff !important;
+}
+app-my-bookings.ion-page{
+  --ion-background-color: #fff !important;
+}
+app-my-profile.ion-page{
+  --ion-background-color: #fff !important;
+}
+ 
+
+ion-button{
+    background-color: #fd3552; border-radius: 5rem; text-transform: capitalize; height: 6.8rem; margin-top: 1rem;
+    img{
+        filter: invert(100%); margin: 0 0 0 1.5rem;
+    }
+}
+.native-input.sc-ion-input-md{
+  padding: 0 !important;
+}
+
+.common_head{
+  width: 100%; display: block; padding: 6rem 2.5rem 4rem; background-color: #fc3451; border-radius: 0 0 0 4rem; position: fixed; top: 0; left: 0; z-index: 99;
+  ion-buttons{
+      ion-back-button{
+          color: #fff;                
+      }
+  }
+  h1{
+      color: #fff; font-size: 2rem; margin: 0 0 0 2rem; padding: 0; letter-spacing: 1px;
+  }
+}
+.common_details_back{
+  padding: 18.5rem 2.5rem 2.5rem 2.5rem; width: 100%;
+}
+ion-back-button{
+  color: #fff;
+}
+
+
+
+
+
+
+

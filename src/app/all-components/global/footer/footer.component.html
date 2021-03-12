@@ -1,0 +1,57 @@
+<ng-container 
+*ngIf="router.url === '/entrypoint'  ||
+router.url === '/login'  || 
+router.url === '/verification'  ||
+router.url === '/verify-otp'; then blankfooter; else mainfooter">
+</ng-container>
+
+<ng-template #blankfooter></ng-template>
+<ng-template #mainfooter>
+  <div class="footer">
+    <ion-footer>
+       <ion-toolbar color="custom" lines="no-lines" class="no-border">
+        <ion-grid>
+            <ion-row>
+              <ion-col [routerLink]="['/home']" routerLinkActive="router-link-active">
+                <div class="back">
+                  <img src="assets/images/f1.png" alt="">
+                  <span>Home</span>
+                </div>
+                
+              </ion-col>
+              <ion-col [routerLink]="['/package']" routerLinkActive="router-link-active">
+                <div class="back">
+                  <img src="assets/images/f2.png" alt="">
+                  <span>Package</span>
+                </div>
+                
+              </ion-col>
+              <ion-col >
+                <div class="back">
+                  <div class="search">
+                    <img src="assets/images/f3.png" alt="">
+                  </div>
+                </div>
+                                
+              </ion-col>
+              <ion-col [routerLink]="['/my-bookings']" routerLinkActive="router-link-active">
+                <div class="back">
+                  <img src="assets/images/f4.png" alt="">
+                  <span>My Bookings</span>
+                </div>
+                
+              </ion-col>
+              <ion-col [routerLink]="['/my-profile']" routerLinkActive="router-link-active">
+                <div class="back">
+                  <img src="assets/images/f5.png" alt="">
+                  <span>profile</span>
+                </div>                
+              </ion-col>
+              
+            </ion-row>
+        </ion-grid> 
+       </ion-toolbar> 
+    </ion-footer>
+</div>
+</ng-template>
+

@@ -1,0 +1,32 @@
+<div class="login_content_back">
+  <div class="head">
+    <h1>Welcome to</h1>
+    <img src="assets/images/main-logo.png" alt="">
+  </div>
+  <div class="details_back">
+    <form action="">
+      <div class="label_back">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3">
+              <ion-select value="+91" okText="Okay" cancelText="Dismiss">
+                <ion-select-option value="+91">+91</ion-select-option>
+                <ion-select-option value="+376">376</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="9">
+              <ion-input placeholder="Enter Mobile Number"></ion-input>
+            </ion-col>
+            
+          </ion-row>
+        </ion-grid>
+      </div>
+      
+      <ion-button expand="block" color="custom" shape="round" [routerLink]="['/verification']" routerLinkActive="router-link-active">
+        Continue 
+        <img src="assets/images/submit-arrow.png" alt="">
+      </ion-button>
+    </form>
+  </div>
+  
+</div>
