@@ -11,20 +11,33 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { HTTP } from '@ionic-native/http/ngx';
+import { Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { map, switchMap, tap } from 'rxjs/operators';
 //import Swal from "sweetalert2";
-import { forkJoin } from 'rxjs';
+import { BehaviorSubject, forkJoin, from } from 'rxjs';
 // import { CartService } from './cart.service';
-
+const JWT_KEY = 'A4uFgVMExg6kCfwb';
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+  private user = new BehaviorSubject(null);
   baseUrl: any = '';
   mediaURL: any = '';
   constructor(
     private http: HttpClient,
-    private nativeHttp: HTTP // public cart: CartService
+    private nativeHttp: HTTP,
+    private storage: Storage,
+    private plt: Platform
   ) {
+    this.plt.ready().then(() => {
+      this.storage.get(JWT_KEY).then((data) => {
+        if (data) {
+          this.user.next(data);
+        }
+      });
+    });
     this.baseUrl = environment.baseURL;
     this.mediaURL = environment.mediaURL;
   }
@@ -67,6 +80,30 @@ export class ApiService {
         console.log('fork error', error);
       }
     );
+  }
+  sendNotification(arg0: string, arg1: string, element: unknown): any {
+    throw new Error('Method not implemented.');
+  }
+
+  signIn(username, password) {
+    return this.http
+      .post(`${this.baseUrl}/jwt-auth/v1/token`, { username, password })
+      .pipe(
+        switchMap((data) => {
+          return from(this.storage.set(JWT_KEY, data));
+        }),
+        tap((data) => {
+          this.user.next(data);
+        })
+      );
+  }
+
+  getCurrentUser() {
+    return this.user.asObservable();
+  }
+
+  getUserValue() {
+    return this.user.getValue();
   }
 
   // sendNotification(msg, title, id) {
@@ -125,27 +162,6 @@ export class ApiService {
     const order = this.JSON_to_URLEncoded(body);
     console.log(order);
     return this.http.post(url, order, header);
-  }
-
-  twilloPostSms(url, body) {
-    let absUrl = 'https://api.circlepoint.in/index.php/';
-    const authorizationData =
-      'Basic ' +
-      btoa(
-        'ACf22e2074a2b2e49c8ab1fcc1b55d6502' +
-          ':' +
-          'bf42fc20ebaa6c0f07f0bd49f6c8a689=='
-      );
-
-    const header = {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/x-www-form-urlencoded')
-        .set('Authorization', authorizationData)
-        .set('Access-Control-Allow-Origin', '*'),
-    };
-    const order = this.JSON_to_URLEncoded(body);
-    console.log(order);
-    return this.http.post(absUrl + url, order, header);
   }
 
   instaPay(url, body, key, token) {

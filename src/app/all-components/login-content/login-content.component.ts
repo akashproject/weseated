@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
+import { Router, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-login-content',
   templateUrl: './login-content.component.html',
@@ -12,7 +15,12 @@ export class LoginContentComponent implements OnInit {
   showOtp = false;
   otp_value: any = '';
   hidden_otp_value: any = '';
-  constructor(private api: ApiService, public util: UtilService) {}
+  constructor(
+    private router: Router,
+    private api: ApiService,
+    public util: UtilService,
+    private navCtrl: NavController
+  ) {}
 
   ngOnInit() {}
 
@@ -80,5 +88,6 @@ export class LoginContentComponent implements OnInit {
     const param = {
       mobile: this.mobile,
     };
+    this.router.navigate(['home']);
   }
 }
