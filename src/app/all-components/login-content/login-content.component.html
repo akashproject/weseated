@@ -1,7 +1,7 @@
-<div class="login_content_back">
+<div class="login_content_back" *ngIf="!showOtp">
   <div class="head">
     <h1>Welcome to</h1>
-    <img src="assets/images/main-logo.png" alt="">
+    <img src="assets/images/main-logo.png" alt="" />
   </div>
   <div class="details_back">
     <form action="">
@@ -15,18 +15,73 @@
               </ion-select>
             </ion-col>
             <ion-col size="9">
-              <ion-input placeholder="Enter Mobile Number"></ion-input>
+              <ion-input
+                type="number"
+                name="mobile"
+                [(ngModel)]="mobile"
+                placeholder="Enter Mobile Number"
+              ></ion-input>
             </ion-col>
-            
           </ion-row>
         </ion-grid>
       </div>
-      
-      <ion-button expand="block" color="custom" shape="round" [routerLink]="['/verification']" routerLinkActive="router-link-active">
-        Continue 
-        <img src="assets/images/submit-arrow.png" alt="">
+
+      <ion-button
+        expand="block"
+        color="custom"
+        shape="round"
+        routerLinkActive="router-link-active"
+        (click)="sendOtp(false)"
+      >
+        Continue
+        <img src="assets/images/submit-arrow.png" alt="" />
       </ion-button>
     </form>
   </div>
-  
+</div>
+
+<div class="verification_content_back" *ngIf="showOtp">
+  <div class="common_head">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <h1>Verification</h1>
+  </div>
+  <div class="common_details_back">
+    <img src="assets/images/verification.svg" alt="" />
+    <p>
+      Enter your <span>VERIFICATION CODE</span><br />we have just sent you on
+      your mobile number
+    </p>
+    <div class="opt_details">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-input
+              type="number"
+              [placeholder]="util.getString('Enter Otp')"
+              name="otp_value"
+              [(ngModel)]="otp_value"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="clear"></div>
+    <ion-button
+      expand="full"
+      class="resend"
+      fill="clear"
+      (click)="sendOtp(true)"
+      >Re-Send</ion-button
+    >
+    <div class="clear"></div>
+    <ion-button expand="full" class="verify" fill="clear" (click)="verifyOtp()"
+      ><ion-icon name="chevron-forward-outline"></ion-icon
+    ></ion-button>
+  </div>
 </div>
