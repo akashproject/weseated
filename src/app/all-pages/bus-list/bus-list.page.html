@@ -1,0 +1,40 @@
+<ion-header no-shadow>
+  <header class="header">
+    <ion-toolbar color="custom" lines="no-lines" class="no-border">
+      <ion-buttons slot="start">
+        <ion-menu-button>
+          <img src="assets/images/menu_icon.png" />
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons
+        slot="end"
+        [routerLink]="['/notification']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="assets/images/head_noti.png" alt="" />
+        <span>2</span>
+      </ion-buttons>
+    </ion-toolbar>
+  </header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="wrapper">
+    <div class="title_back">
+      <h1>Searching for</h1>
+      <h2>{{ data.start }} to {{ data.end }}</h2>
+    </div>
+    <!-- <ion-card *ngFor="let item of busResult;let i = index">
+      <ion-card-header>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit
+        clean.
+      </ion-card-content>
+    </ion-card> -->
+  </div>
+</ion-content>

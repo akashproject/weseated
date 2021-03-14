@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-tab.component.scss'],
 })
 export class CategoryTabComponent implements OnInit {
-
-  constructor(){}
+  constructor() {}
   ngOnInit() {}
-
 }

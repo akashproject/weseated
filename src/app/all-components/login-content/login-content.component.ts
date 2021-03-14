@@ -3,7 +3,7 @@ import { NavController } from '@ionic/angular';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
 import { Router, NavigationExtras } from '@angular/router';
-
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-login-content',
   templateUrl: './login-content.component.html',
@@ -19,8 +19,15 @@ export class LoginContentComponent implements OnInit {
     private router: Router,
     private api: ApiService,
     public util: UtilService,
+    private storage: Storage,
     private navCtrl: NavController
-  ) {}
+  ) {
+    this.storage.get('userinfo').then((data) => {
+      if (data) {
+        this.router.navigate(['home']);
+      }
+    });
+  }
 
   ngOnInit() {}
 
@@ -88,6 +95,25 @@ export class LoginContentComponent implements OnInit {
     const param = {
       mobile: this.mobile,
     };
-    this.router.navigate(['home']);
+    this.api.post('signup', param).subscribe(
+      (data: any) => {
+        console.log('response', data);
+        if (data && data.status === 200) {
+          this.storage.set('userinfo', data.data);
+          this.router.navigate(['home']);
+        } else if (data && data.status === 500) {
+          console.log('500');
+          this.util.errorToast(data.data.error);
+        } else {
+          console.log('wrong');
+          this.util.errorToast(this.util.getString('Something went wrong'));
+        }
+      },
+      (error) => {
+        console.log(error);
+        this.loggedIn = false;
+        this.util.errorToast(this.util.getString('Something went wrong'));
+      }
+    );
   }
 }
