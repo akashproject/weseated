@@ -52,6 +52,13 @@ const routes: Routes = [
         (m) => m.BusListPageModule
       ),
   },
+  {
+    path: 'bus-detail/:id',
+    loadChildren: () =>
+      import('./all-pages/bus-details/bus-details.module').then(
+        (m) => m.BusDetailsPageModule
+      ),
+  },
 ];
 
 @NgModule({

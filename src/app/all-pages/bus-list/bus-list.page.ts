@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 @Component({
   selector: 'app-bus-list',
   templateUrl: './bus-list.page.html',
@@ -24,14 +24,13 @@ export class BusListPage implements OnInit {
         this.data = JSON.parse(params.special);
       }
     });
-    console.log('here 1', this.data);
+
     this.api.post('bussearch', this.data).subscribe(
       (data: any) => {
         console.log('response', data);
         if (data && data.status === 200) {
-          this.busResult['title'] = data.data.title;
-          this.busResult['id'] = data.data.id;
-          this.busResult['price'] = data.data.price;
+          this.busResult = data.data;
+          console.log(this.busResult);
         } else if (data && data.status === 500) {
           console.log('500');
           this.util.errorToast(data.data.error);
