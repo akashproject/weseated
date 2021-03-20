@@ -10,10 +10,15 @@
 export const environment = {
   production: true,
   baseURL: 'http://salils14.sg-host.com/wp-json/we-seated/v2/',
+  absUrl: 'http://salils14.sg-host.com',
   mediaURL: 'http://salils14.sg-host.com/uploads/',
   general: {
     symbol: '$',
     code: 'USD',
+  },
+  wookey: {
+    key: 'ck_6050351791918d51329f52fd605c85c36e755048',
+    secret: 'cs_81adce871197bfd52accd57c61f11d57512689e4',
   },
   authToken: '123456789',
 };

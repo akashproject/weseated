@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 @Component({
   selector: 'app-bus-details',
   templateUrl: './bus-details.page.html',
@@ -73,5 +73,22 @@ export class BusDetailsPage implements OnInit {
     );
   }
 
-  selectSeat(param) {}
+  toggleSeat(param) {
+    const index = this.selectedSeat.indexOf(param);
+    if (index > -1) {
+      this.selectedSeat.splice(index, 1);
+    } else {
+      this.selectedSeat.push(param);
+    }
+    console.log(this.selectedSeat);
+  }
+
+  passengerinfo() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(this.selectedSeat),
+      },
+    };
+    this.router.navigate(['passenger-info'], navigationExtras);
+  }
 }

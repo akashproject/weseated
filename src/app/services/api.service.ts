@@ -152,6 +152,50 @@ export class ApiService {
     return this.http.post(this.baseUrl + url, param, header);
   }
 
+  createOrder(params) {
+    const orderObj = {
+      payment_method: 'bacs',
+      payment_method_title: 'Direct Bank Transfer',
+      set_paid: true,
+      billing: {
+        first_name: 'John',
+        last_name: 'Doe',
+        address_1: '969 Market',
+        address_2: '',
+        city: 'San Francisco',
+        state: 'CA',
+        postcode: '94103',
+        country: 'US',
+        email: 'john.doe@example.com',
+        phone: '(555) 555-5555',
+      },
+      line_items: [
+        {
+          product_id: 93,
+          quantity: 1,
+        },
+      ],
+    };
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    const order = this.JSON_to_URLEncoded(orderObj);
+
+    return new Promise((resolve) => {
+      this.http
+        .post(
+          `${environment.absUrl}/wp-json/wc/v3/orders/?consumer_key=${environment.wookey.key}&consumer_secret=${environment.wookey.secret}`,
+          order,
+          { headers }
+        )
+        .subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
+
   externalPost(url, body, key) {
     const header = {
       headers: new HttpHeaders()
@@ -161,13 +205,6 @@ export class ApiService {
     const order = this.JSON_to_URLEncoded(body);
     console.log(order);
     return this.http.post(url, order, header);
-  }
-
-  instaPay(url, body, key, token) {
-    return this.nativeHttp.post(url, body, {
-      'X-Api-Key': `${key}`,
-      'X-Auth-Token': `${token}`,
-    });
   }
 
   get(url) {

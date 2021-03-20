@@ -1,0 +1,56 @@
+<ion-header no-shadow>
+  <header class="header">
+    <ion-toolbar color="custom" lines="no-lines" class="no-border">
+      <ion-buttons slot="start">
+        <ion-menu-button>
+          <img src="assets/images/menu_icon.png" />
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-buttons
+        slot="end"
+        [routerLink]="['/notification']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="assets/images/head_noti.png" alt="" />
+        <span>2</span>
+      </ion-buttons>
+    </ion-toolbar>
+  </header>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="wrapper">
+    <div class="title_back">
+      <h1>Add Passenger</h1>
+    </div>
+
+    <div class="search_bar_cover">
+      <div class="searcbar_content_back">
+        <form action="">
+          <div class="input_back">
+            <ion-label color="primary">Contact Detail</ion-label>
+            <ion-item>
+              <ion-label position="fixed">Email</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="fixed">Phone</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </div>
+        </form>
+      </div>
+      <div
+        class="searcbar_content_back"
+        *ngFor="let items of data; let i = index"
+      >
+        <ion-item>
+          <ion-input placeholder="Enter Name"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" (click)="createOrder()">Create Payment</ion-button>
+</ion-footer>
