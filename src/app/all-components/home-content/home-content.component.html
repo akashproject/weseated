@@ -3,7 +3,44 @@
     <h1>Hi, John</h1>
     <h2>Where would you like to go?</h2>
   </div>
-  <div class="search_bar_cover">
+  <ion-slides pager="false" [options]="slideOptsBooking" *ngIf="!bookSelected">
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> New Delhi to Mumbai </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-button expand="full" (click)="cardBookNow()"
+            >Book Now</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> New Delhi to Mumbai </ion-card-title>
+        </ion-card-header>
+
+        <ion-button expand="full" (click)="cardBookNow()">Book Now</ion-button>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title> New Delhi to Mumbai </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-button expand="full" (click)="cardBookNow()"
+            >Book Now</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <!-- <div class="search_bar_cover" *ngIf="!bookSelected">
     <div class="searcbar_content_back">
       <form action="">
         <div class="input_back">
@@ -23,11 +60,11 @@
         /></ion-button>
       </form>
     </div>
-  </div>
+  </div> -->
 
   <div class="sub_wrap">
     <div class="ultra_wrap">
-      <ul class="category_tab_menu">
+      <ul class="category_tab_menu" *ngIf="bookSelected">
         <li (click)="acClick()" [class.active]="active">
           <a href="javascript:void(0)">
             <div class="icon_back">
@@ -64,7 +101,7 @@
       <div class="location_details_back">
         <h4>Where do you want to go?</h4>
         <form action="">
-          <ion-grid>
+          <ion-grid *ngIf="bookSelected">
             <ion-row>
               <ion-col size="7">
                 <div class="details">
@@ -104,6 +141,7 @@
             </ion-row>
           </ion-grid>
           <ion-button
+            *ngIf="bookSelected"
             expand="block"
             color="custom"
             shape="round"

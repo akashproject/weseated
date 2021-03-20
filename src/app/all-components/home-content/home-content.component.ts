@@ -13,6 +13,7 @@ export class HomeContentComponent implements OnInit {
   active2: boolean = false;
   active3: boolean = false;
   active4: boolean = false;
+  bookSelected: boolean = false;
   slideOptsLocation = {
     initialSlide: 0,
     autoplay: true,
@@ -23,7 +24,21 @@ export class HomeContentComponent implements OnInit {
     grabCursor: true,
     spaceBetween: 0,
   };
+
   slideOptsOffar = {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    grabCursor: true,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 35,
+      depth: 0,
+      modifier: 1,
+      slideShadows: true,
+    },
+  };
+
+  slideOptsBooking = {
     slidesPerView: 1,
     spaceBetween: 0,
     grabCursor: true,
@@ -88,5 +103,12 @@ export class HomeContentComponent implements OnInit {
     this.router.navigate(['bus-list'], navigationExtras);
 
     /* */
+  }
+
+  cardBookNow() {
+    this.bookSelected = true;
+    this.busFilter.start = 'Korunamoyee';
+    this.busFilter.end = 'Burdwan';
+    //this.findBus();
   }
 }
