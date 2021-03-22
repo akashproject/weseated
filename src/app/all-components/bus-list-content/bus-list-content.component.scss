@@ -1,0 +1,60 @@
+.bus_list{
+    width: 100%; display: block; padding-top: 2rem;
+    .common_head{
+        ion-toolbar{
+            --ion-background-color: transparent;
+            ion-buttons{
+                position: relative;
+                span{
+                   width: 15px; height: 15px; padding: 3px; border-radius: 100%; background-color: #fbd127; display: flex; justify-content: center; align-items: center; position: absolute; top: 6px; right: 0;
+                }
+             }
+        }
+    }
+    h1{
+        span{
+          font-size: 1.4rem;
+        }
+      }
+    .common_details_back{
+        width: 100%; display: block;
+        .bus_list_details{
+            width: 100%;
+            h2{
+                text-align: center; width: 100%; font-family: 'sansation-bold'; font-size: 1.8rem; margin-bottom: 4rem;
+            }
+        }
+        ion-card{
+            box-shadow: rgba(0,0,0,.2) 1px 0 10px; border-radius: 1rem; position: relative;
+            ion-card-title{
+                color: #fc3451; font-size: 1.5rem; font-family: 'sansation-bold';  
+            }
+            ion-card-subtitle{
+                font-size: 1rem;
+            }
+            ion-card-content{
+                color: #333; font-size: 1.4rem; font-family: 'sansation-regular';  height: 100%; display: flex; align-items: center;  padding: 0 15px;
+               ul{
+                   &.details{
+                       width: 100%; margin: 0; padding: 0 0 2rem 0; display: flex; align-items: center; justify-content: space-between;
+                       li{
+                           font-size: 10px; text-align: left; list-style: none; color: #fc3451;
+                           span{
+                            color: #52c077;
+                           }
+                           &:nth-child(2){
+                               text-align: center;
+                           }
+                           &:last-child{
+                               text-align: right; font-size: 1.8rem;  font-family: 'sansation-bold';  
+                           }
+                       }
+                   }
+               }               
+                
+            }
+        }
+       
+    }
+
+}

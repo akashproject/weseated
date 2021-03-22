@@ -3,43 +3,38 @@
     <h1>Hi, John</h1>
     <h2>Where would you like to go?</h2>
   </div>
-  <ion-slides pager="false" [options]="slideOptsBooking" *ngIf="!bookSelected">
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title> New Delhi to Mumbai </ion-card-title>
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-button expand="full" (click)="cardBookNow()"
-            >Book Now</ion-button
-          >
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title> New Delhi to Mumbai </ion-card-title>
-        </ion-card-header>
-
-        <ion-button expand="full" (click)="cardBookNow()">Book Now</ion-button>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title> New Delhi to Mumbai </ion-card-title>
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-button expand="full" (click)="cardBookNow()"
-            >Book Now</ion-button
-          >
-        </ion-card-content>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+  <div class="book_now_cover">
+    <ion-slides pager="false" [options]="slideOptsBooking" *ngIf="!bookSelected">
+      <ion-slide>
+        <div class="details">
+          <h3>New Delhi to Mumbai</h3>
+          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+            Book Now
+            <img src="assets/images/submit-arrow.png" alt="" />
+          </ion-button>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="details">
+          <h3>New Delhi to Mumbai</h3>
+          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+            Book Now
+            <img src="assets/images/submit-arrow.png" alt="" />
+          </ion-button>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="details">
+          <h3>New Delhi to Mumbai</h3>
+          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+            Book Now
+            <img src="assets/images/submit-arrow.png" alt="" />
+          </ion-button>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
   <!-- <div class="search_bar_cover" *ngIf="!bookSelected">
     <div class="searcbar_content_back">
       <form action="">

@@ -1,46 +1,62 @@
-<ion-header no-shadow>
-  <header class="header">
-    <ion-toolbar color="custom" lines="no-lines" class="no-border">
-      <ion-buttons slot="start">
-        <ion-menu-button>
-          <img src="assets/images/menu_icon.png" />
-        </ion-menu-button>
-      </ion-buttons>
-      <ion-buttons
-        slot="end"
-        [routerLink]="['/notification']"
-        routerLinkActive="router-link-active"
-      >
-        <img src="assets/images/head_noti.png" alt="" />
-        <span>2</span>
-      </ion-buttons>
-    </ion-toolbar>
-  </header>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="wrapper">
-    <div class="title_back">
-      <h1>Searching for</h1>
-      <h2>{{ data.start }} to {{ data.end }}</h2>
+<!--<div class="bus_list">
+  <div class="common_head_cover">
+    <div class="common_head">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/"
+            text=""
+            icon="chevron-back-outline"
+          ></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons
+          slot="end"
+          [routerLink]="['/notification']"
+          routerLinkActive="router-link-active"
+        >
+          <img src="assets/images/head_noti.png" alt="" />
+          <span>2</span>
+        </ion-buttons>
+      </ion-toolbar>
+      <h1>Searching For<br /><span>{{ data.start }} to {{ data.end }}</span></h1>
     </div>
-    <ion-card
-      *ngFor="let item of busResult; let i = index"
-      routerLink="/bus-detail/{{item.id}}"
-    >
-      <ion-card-header>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-        <ion-card-title>{{item.title}}</ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-item button *ngFor="let prices of item.price; let i = index">
-          <ion-label>
-            Child : {{ prices.wbtm_bus_child_price }} Adult Price :
-            {{prices.wbtm_bus_price}}
-          </ion-label>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
   </div>
+  
+
+  <div class="common_details_back">
+    <ion-content [fullscreen]="true">
+      <div class="wrapper">
+        <ion-card
+          *ngFor="let item of busResult; let i = index"
+          routerLink="/bus-detail/{{item.id}}"
+        >
+          <ion-card-header>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            <ion-card-title>{{item.title}}</ion-card-title>
+          </ion-card-header>
+  
+          <ion-card-content>
+            <ion-item button *ngFor="let prices of item.price; let i = index">
+              <ion-label>
+                Child : {{ prices.wbtm_bus_child_price }} Adult Price :
+                {{prices.wbtm_bus_price}}
+              </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-content>
+  </div>
+</div>-->
+
+
+<ion-content class="buslist">
+  <app-bus-list-content></app-bus-list-content>
 </ion-content>
+
+
+
+
+
+
