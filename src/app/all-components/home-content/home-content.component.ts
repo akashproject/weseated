@@ -39,7 +39,7 @@ export class HomeContentComponent implements OnInit {
   };
 
   slideOptsBooking = {
-    slidesPerView: 2,
+    slidesPerView: 1.2,
     spaceBetween: 10,
     grabCursor: true,
     coverflowEffect: {

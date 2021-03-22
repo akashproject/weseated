@@ -9,9 +9,9 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./bus-list-content.component.scss'],
 })
 export class BusListContentComponent implements OnInit {
-
   data: any;
   busResult: any = [];
+  availablity: any;
   constructor(
     public activatedRoute: ActivatedRoute,
     private router: Router,
@@ -32,7 +32,7 @@ export class BusListContentComponent implements OnInit {
         console.log('response', data);
         if (data && data.status === 200) {
           this.busResult = data.data;
-          console.log(this.busResult);
+          this.availablity = this.busResult.length;
         } else if (data && data.status === 500) {
           console.log('500');
           this.util.errorToast(data.data.error);
@@ -47,5 +47,4 @@ export class BusListContentComponent implements OnInit {
       }
     );
   }
-
 }

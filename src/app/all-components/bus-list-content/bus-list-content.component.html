@@ -19,10 +19,11 @@
           <span>2</span>
         </ion-buttons>
       </ion-toolbar>
-      <h1>Searching For<br /><span>{{ data.start }} to {{ data.end }}</span></h1>
+      <h1>
+        Searching For<br /><span>{{ data.start }} to {{ data.end }}</span>
+      </h1>
     </div>
   </div>
-  
 
   <div class="common_details_back">
     <!--<ion-content [fullscreen]="true">
@@ -49,51 +50,25 @@
     </ion-content>-->
 
     <div class="bus_list_details">
-      <h2>3 Bus Available</h2>
-      <ion-card>
+      <h2>{{ availablity }} Bus Available</h2>
+      <ion-card
+        *ngFor="let item of busResult; let i = index"
+        routerLink="/bus-detail/{{ item.id }}"
+      >
         <ion-card-header>
-          <ion-card-title>Eco Travel</ion-card-title>
-          <ion-card-subtitle>AC Sleeper</ion-card-subtitle>        
-        </ion-card-header>    
+          <ion-card-title>{{ item.title }}</ion-card-title>
+          <ion-card-subtitle>AC Sleeper</ion-card-subtitle>
+        </ion-card-header>
         <ion-card-content>
           <ul class="details">
             <li>8:00 A.M - <span>1:00 P.M</span></li>
             <li>28 Seats</li>
-            <li>1600$</li>
+            <li *ngFor="let prices of item.price | slice: 0:1; let i = index">
+              {{ prices.wbtm_bus_price }} /-
+            </li>
           </ul>
-         
         </ion-card-content>
       </ion-card>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Eco Travel</ion-card-title>
-          <ion-card-subtitle>AC Sleeper</ion-card-subtitle>        
-        </ion-card-header>    
-        <ion-card-content>
-          <ul class="details">
-            <li>8:00 A.M - <span>1:00 P.M</span></li>
-            <li>28 Seats</li>
-            <li>1600$</li>
-          </ul>
-         
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Eco Travel</ion-card-title>
-          <ion-card-subtitle>AC Sleeper</ion-card-subtitle>        
-        </ion-card-header>    
-        <ion-card-content>
-          <ul class="details">
-            <li>8:00 A.M - <span>1:00 P.M</span></li>
-            <li>28 Seats</li>
-            <li>1600$</li>
-          </ul>
-         
-        </ion-card-content>
-      </ion-card>
-      
     </div>
-
   </div>
 </div>
