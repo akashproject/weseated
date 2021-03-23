@@ -139,7 +139,9 @@ app-bus-details{
   --ion-background-color: #202020 !important;
 }
  
- 
+.clear{
+  clear: both;
+}
 
 ion-button{
     background-color: #fd3552; border-radius: 5rem; text-transform: capitalize; height: 6.8rem; margin-top: 1rem;
