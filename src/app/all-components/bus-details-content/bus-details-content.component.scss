@@ -1,0 +1,111 @@
+.bus_book_details{
+    width: 100%; display: block; padding-top: 2rem;
+    .common_head{
+        ion-toolbar{
+            --ion-background-color: transparent;
+            ion-buttons{
+                position: relative;
+                span{
+                   width: 15px; height: 15px; padding: 3px; border-radius: 100%; background-color: #fbd127; display: flex; justify-content: center; align-items: center; position: absolute; top: 6px; right: 0;
+                }
+             }
+        }
+    }
+    h1{
+        span{
+          font-size: 1.4rem;
+        }
+      }
+    .common_details_back{
+        width: 100%; display: block;
+        ul{
+            &.booking_status{
+                width: 100%; text-align: center; margin: 0; padding: 0;
+                li{
+                    display: inline-block; list-style: none; width: 25%; text-transform: capitalize; font-size: 1.6rem; cursor: pointer;
+                    span{
+                        width: 4.4rem; height: 4.4rem; border-radius: 1rem 1rem 0 0; display: inline-block; margin: 0 0 1rem 0;
+                        &.available{
+                            background-color: #d9d9d9;
+                        }
+                        &.booked{
+                            background-color: #929292;
+                        }
+                        &.selected{
+                            background-color: #ef4b52;
+                        }
+                        &.ladies{
+                            background-color: #f2bfbe;
+                        }
+                        
+                        
+                    }
+                    &:first-child{
+                        color: #d9d9d9;
+                    }
+                    &:nth-child(2){
+                        color: #929292;
+                    }
+                    &:nth-child(3){
+                        color: #ef4b52;
+                    }
+                    &:last-child{
+                        color: #f2bfbe; margin: 0;
+                    }
+                }
+            }
+        }
+        .booking_portion{
+            width: 100%; padding-top: 14rem; padding-left: 3rem; position: relative;
+            .hold{
+                position: fixed; top: 0; height: 100%; left: 0; width: 4rem;
+                img{
+                    width: 100%; position: absolute; top: 30rem; bottom: 0; margin: auto;  left: 0;
+                }
+            }
+            .driver{
+                position: absolute; top: 7.9rem; right: 4px;
+                img{
+                    width: 4.4rem;
+                }
+            }
+            ul{
+                &.booking{
+                    width: 33.33333%; margin: 0; padding: 0; float: left;
+                    &:last-child{
+                        float: right;
+                    }
+                    li{
+                        width: 50%; text-align: center; list-style: none; float: left; margin-bottom: 4rem;
+                        &:last-child{
+                            float: right;
+                        }
+                        &.select{
+                            span{
+                                background-color: #ef4b52 !important;
+                            }
+                        }
+                        span{
+                            width: 4.4rem; height: 4.4rem; border-radius: 1rem 1rem 0 0; display: inline-block; margin: 0 0 0 0; background-color: #d9d9d9;
+                            &.available{
+                                background-color: #d9d9d9;
+                            }
+                            &.booked{
+                                background-color: #929292;
+                            }
+                            &.selected{
+                                background-color: #ef4b52;
+                            }
+                            &.ladies{
+                                background-color: #f2bfbe;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+       
+    }
+
+}

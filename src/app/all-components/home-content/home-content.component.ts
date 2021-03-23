@@ -19,7 +19,7 @@ export class HomeContentComponent implements OnInit {
     autoplay: true,
     freeMode: false,
     speed: 400,
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     watchSlidesProgress: true,
     grabCursor: true,
     spaceBetween: 0,

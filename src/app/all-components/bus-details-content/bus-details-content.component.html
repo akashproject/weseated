@@ -1,0 +1,105 @@
+<div class="bus_book_details">
+  <div class="common_head_cover">
+    <div class="common_head">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/"
+            text=""
+            icon="chevron-back-outline"
+          ></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons
+          slot="end"
+          [routerLink]="['/notification']"
+          routerLinkActive="router-link-active"
+        >
+          <img src="assets/images/head_noti.png" alt="" />
+          <span>2</span>
+        </ion-buttons>
+      </ion-toolbar>
+      <h1>
+        Select Seat
+      </h1>
+    </div>
+  </div>
+  <div class="common_details_back">
+    <ul class="booking_status">
+      <li>
+        <span  class="available"></span><br>available
+      </li>
+      <li>
+        <span class="booked"></span><br>booked
+      </li>
+      <li>
+        <span class="selected"></span><br>selected
+      </li>
+      <li>
+        <span class="ladies"></span><br>ladies
+      </li>
+    </ul>
+    <div class="booking_portion">
+      <div class="hold"><img src="assets/images/hold.png" alt=""></div>
+      <div class="driver"><img src="assets/images/wheel.png" alt=""></div>
+      <ul class="booking">
+        <li (click)="selected()" [class.select]="active"><span class="available"></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span class="available"></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span class="available"></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+      </ul>
+      <ul class="booking">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span class="available"></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span class="available"></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+        <li><span></span></li>
+        <li><span class="ladies"></span></li>
+        <li><span></span></li>
+        <li><span class="booked"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!--<ion-content [fullscreen]="true">
+  <div class="wrapper">
+    <div class="title_back">
+      <h1>Select Seat</h1>
+    </div>
+    <ion-grid>
+      <ion-row *ngFor="let items of seats; let i = index">
+        <ion-col
+          *ngFor="let item of items; let j = index"
+          (click)="toggleSeat(item)"
+        >
+          {{item}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" (click)="passengerinfo()">Next</ion-button>
+</ion-footer>-->

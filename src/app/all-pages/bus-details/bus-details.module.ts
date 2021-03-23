@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BusDetailsPageRoutingModule } from './bus-details-routing.module';
 
 import { BusDetailsPage } from './bus-details.page';
+import { BusDetailsContentComponent } from 'src/app/all-components/bus-details-content/bus-details-content.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { BusDetailsPage } from './bus-details.page';
     IonicModule,
     BusDetailsPageRoutingModule,
   ],
-  declarations: [BusDetailsPage],
+  declarations: [BusDetailsPage, BusDetailsContentComponent],
 })
 export class BusDetailsPageModule {}

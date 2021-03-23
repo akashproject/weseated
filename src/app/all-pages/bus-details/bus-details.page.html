@@ -1,40 +1,5 @@
-<ion-header no-shadow>
-  <header class="header">
-    <ion-toolbar color="custom" lines="no-lines" class="no-border">
-      <ion-buttons slot="start">
-        <ion-menu-button>
-          <img src="assets/images/menu_icon.png" />
-        </ion-menu-button>
-      </ion-buttons>
-      <ion-buttons
-        slot="end"
-        [routerLink]="['/notification']"
-        routerLinkActive="router-link-active"
-      >
-        <img src="assets/images/head_noti.png" alt="" />
-        <span>2</span>
-      </ion-buttons>
-    </ion-toolbar>
-  </header>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="wrapper">
-    <div class="title_back">
-      <h1>Select Seat</h1>
-    </div>
-    <ion-grid>
-      <ion-row *ngFor="let items of seats; let i = index">
-        <ion-col
-          *ngFor="let item of items; let j = index"
-          (click)="toggleSeat(item)"
-        >
-          {{item}}
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+
+<ion-content class="bus-details">
+  <app-bus-details-content></app-bus-details-content>
 </ion-content>
-<ion-footer>
-  <ion-button expand="full" (click)="passengerinfo()">Next</ion-button>
-</ion-footer>
