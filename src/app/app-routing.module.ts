@@ -53,7 +53,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'bus-detail',
+    path: 'bus-detail/:id',
     loadChildren: () =>
       import('./all-pages/bus-details/bus-details.module').then(
         (m) => m.BusDetailsPageModule

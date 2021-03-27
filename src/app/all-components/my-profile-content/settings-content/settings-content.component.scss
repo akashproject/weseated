@@ -1,0 +1,16 @@
+.profile_all {
+    .common_details_back {
+        ion-card {
+            ion-card-content{
+                ion-label{
+                    margin-top: 1rem;
+                    display: inline-block;
+                }
+                ion-select{
+                    padding: 10px 0 10px 16px;
+                }
+            }
+            
+        }
+    }
+}

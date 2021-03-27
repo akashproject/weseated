@@ -1,0 +1,116 @@
+<div class="add_passengers_details">
+  <div class="common_head_cover">
+    <div class="common_head">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/"
+            text=""
+            icon="chevron-back-outline"
+          ></ion-back-button>
+        </ion-buttons>
+        <ion-title></ion-title>
+        <ion-buttons
+          slot="end"
+          [routerLink]="['/notification']"
+          routerLinkActive="router-link-active"
+        >
+          <img src="assets/images/head_noti.png" alt="" />
+          <span>2</span>
+        </ion-buttons>
+      </ion-toolbar>
+      <h1>
+        Add Passengers
+      </h1>
+    </div>
+  </div>
+  <div class="common_details_back">
+ 
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Contact Information</ion-card-title>
+      </ion-card-header>    
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3">
+              <ion-label>Email :</ion-label>
+            </ion-col>
+            <ion-col size="9">
+              <ion-input type="email" placeholder="Enter Email ID"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="3">
+              <ion-label>Phone :</ion-label>
+            </ion-col>
+            <ion-col size="9">
+              <ion-input type="number" placeholder="Enter Mobile Number"></ion-input>
+            </ion-col>
+           
+          </ion-row>
+        </ion-grid>
+        
+      </ion-card-content>
+    </ion-card>
+    <div class="passengers_seat_details">
+      <ion-card>
+        <ion-card-header (click)="p_click_l1()">
+          <ion-card-title>Passengers: Seat L1 <ion-icon name="chevron-down-outline"></ion-icon></ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="p_click_l1_open">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <ion-input type="text" placeholder="Enter Your Name"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-input type="text" placeholder="Enter Your Age"></ion-input>
+              </ion-col>
+              <ion-col size="6">
+                <ion-select value="Select Gender" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="Select Gender">Select Gender</ion-select-option>
+                  <ion-select-option value="Male">Male</ion-select-option>
+                  <ion-select-option value="Female">Female</ion-select-option>
+                  <ion-select-option value="Others">Others</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>  
+      </ion-card>
+      <ion-card>
+        <ion-card-header (click)="p_click_l13()">
+          <ion-card-title>Passengers: Seat L13 <ion-icon name="chevron-down-outline"></ion-icon></ion-card-title>
+        </ion-card-header>
+        <ion-card-content *ngIf="p_click_l13_open">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <ion-input type="text" placeholder="Enter Your Name"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-input type="text" placeholder="Enter Your Age"></ion-input>
+              </ion-col>
+              <ion-col size="6">
+                <ion-select value="Select Gender" okText="Okay" cancelText="Dismiss">
+                  <ion-select-option value="Select Gender">Select Gender</ion-select-option>
+                  <ion-select-option value="Male">Male</ion-select-option>
+                  <ion-select-option value="Female">Female</ion-select-option>
+                  <ion-select-option value="Others">Others</ion-select-option>
+                </ion-select>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>  
+      </ion-card>
+      <div class="button_back">
+        <ion-button expand="block" color="custom" shape="round" (click)="createOrder()">Create Payment</ion-button>
+      </div>
+    </div>
+  </div>
+</div>

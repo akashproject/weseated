@@ -1,0 +1,17 @@
+ion-card{
+    
+    ion-card-content{
+        ion-row{
+            border-bottom: none;
+        }
+        ion-input{
+            width: 100%; border: #717171 1px solid; height: 5rem; border-radius: 1rem; padding: 0 1rem !important;
+        }
+        ion-textarea{
+            border-radius: 1rem; padding: 0 1rem !important; width: 100%; height: 15rem; border: #717171 1px solid;
+        }
+      
+    }
+    
+    
+}

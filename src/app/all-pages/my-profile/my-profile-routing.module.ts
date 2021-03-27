@@ -27,7 +27,12 @@ const routes: Routes = [
   {
     path: 'help-support',
     loadChildren: () => import('./help-support/help-support.module').then( m => m.HelpSupportPageModule)
+  },
+  {
+    path: 'refer-earn',
+    loadChildren: () => import('./reffer-earn/reffer-earn.module').then( m => m.RefferEarnPageModule)
   }
+
 ];
 
 @NgModule({

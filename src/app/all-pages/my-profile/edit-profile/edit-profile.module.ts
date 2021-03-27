@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EditProfilePageRoutingModule } from './edit-profile-routing.module';
 
 import { EditProfilePage } from './edit-profile.page';
+import { EditProfileContentComponent } from 'src/app/all-components/my-profile-content/edit-profile-content/edit-profile-content.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { EditProfilePage } from './edit-profile.page';
     IonicModule,
     EditProfilePageRoutingModule
   ],
-  declarations: [EditProfilePage]
+  declarations: [EditProfilePage, EditProfileContentComponent]
 })
 export class EditProfilePageModule {}

@@ -31,7 +31,7 @@
       routerLinkActive="router-link-active"
     >
       <ion-icon slot="start" name="create-outline"></ion-icon>
-      <ion-label>Your Orders</ion-label>
+      <ion-label>Edit Profile</ion-label>
       <ion-icon
         slot="end"
         class="arrow"
@@ -64,6 +64,22 @@
     >
       <ion-icon slot="start" name="card-outline"></ion-icon>
       <ion-label>Cards</ion-label>
+      <ion-icon
+        slot="end"
+        class="arrow"
+        name="chevron-forward-outline"
+      ></ion-icon>
+    </ion-item>
+
+    <ion-item
+      lines="none"
+      color="custom"
+      class="ion-no-padding"
+      [routerLink]="['/my-profile/refer-earn']"
+      routerLinkActive="router-link-active"
+    >
+      <ion-icon slot="start" name="card-outline"></ion-icon>
+      <ion-label>Refer & Earn</ion-label>
       <ion-icon
         slot="end"
         class="arrow"

@@ -138,6 +138,28 @@ app-bus-details.ion-page{
 app-bus-details{
   --ion-background-color: #202020 !important;
 }
+app-passenger-info.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-edit-profile.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-help-support.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-wallet.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-cards.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-reffer-earn.ion-page{
+  --ion-background-color: #202020 !important;
+}
+app-settings.ion-page{
+  --ion-background-color: #202020 !important;
+}
+ 
  
 .clear{
   clear: both;
@@ -173,6 +195,64 @@ ion-back-button{
 
 
 
+.profile_all{
+  width: 100%; display: block; padding-top: 2rem;
+  .common_head{
+      ion-toolbar{
+          --ion-background-color: transparent;
+          ion-buttons{
+              position: relative;
+              span{
+                 width: 15px; height: 15px; padding: 3px; border-radius: 100%; background-color: #fbd127; display: flex; justify-content: center; align-items: center; position: absolute; top: 6px; right: 0;
+              }
+           }
+      }
+  }
+  .common_details_back{
+      width: 100%; display: block;
+      ion-card{
+          padding: 0; margin: 0 0 10px 0; background-color: #1b1b1b; box-shadow: none;
+          ion-card-header{
+              padding-bottom: 0;
+              ion-card-title{
+                  color: #bcbcbc; font-size: 1.5rem;
+              }
+          }
+          ion-card-content{
+              ion-label{
+                  color: #898989;
+              }
+              ion-row{
+                  border-bottom: #717171 1px solid; padding: 5px 0;
+                  &:last-child{
+                      border-bottom: none;
+                  }
+                  
+              }
+              ion-input{
+                  &::placeholder{
+                      color: #727272;
+                  }
+              }
+              ion-select{
+                  padding: 0;
+              }
+          }
+      }
+      .button_back{
+          ion-button{
+              height: 4.8rem;
+          }
+      }
+  }
+
+}
+ion-buttons{
+  position: relative;
+  span{
+     width: 15px; height: 15px; padding: 3px; border-radius: 100%; background-color: #fbd127; display: flex; justify-content: center; align-items: center; position: absolute; top: 6px; right: 0;
+  }
+}
 
 
 

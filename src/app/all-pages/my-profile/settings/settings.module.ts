@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SettingsPageRoutingModule } from './settings-routing.module';
 
 import { SettingsPage } from './settings.page';
+import { SettingsContentComponent } from 'src/app/all-components/my-profile-content/settings-content/settings-content.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { SettingsPage } from './settings.page';
     IonicModule,
     SettingsPageRoutingModule
   ],
-  declarations: [SettingsPage]
+  declarations: [SettingsPage, SettingsContentComponent]
 })
 export class SettingsPageModule {}

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PassengerInfoPageRoutingModule } from './passenger-info-routing.module';
 
 import { PassengerInfoPage } from './passenger-info.page';
+import { AddPassengersComponent } from 'src/app/all-components/add-passengers/add-passengers.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { PassengerInfoPage } from './passenger-info.page';
     IonicModule,
     PassengerInfoPageRoutingModule,
   ],
-  declarations: [PassengerInfoPage],
+  declarations: [PassengerInfoPage, AddPassengersComponent],
 })
 export class PassengerInfoPageModule {}

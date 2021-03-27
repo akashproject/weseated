@@ -22,9 +22,9 @@
             &.booking_status{
                 width: 100%; text-align: center; margin: 0; padding: 0;
                 li{
-                    display: inline-block; list-style: none; width: 25%; text-transform: capitalize; font-size: 1.6rem; cursor: pointer;
+                    display: inline-block; list-style: none; width: 25%; text-transform: capitalize; font-size: 1.2rem; cursor: pointer;
                     span{
-                        width: 4.4rem; height: 4.4rem; border-radius: 1rem 1rem 0 0; display: inline-block; margin: 0 0 1rem 0;
+                        width: 3rem; height: 3rem; border-radius: .8rem .8rem 0 0; display: inline-block; margin: 0 0 1rem 0;
                         &.available{
                             background-color: #d9d9d9;
                         }
@@ -56,7 +56,7 @@
             }
         }
         .booking_portion{
-            width: 100%; padding-top: 14rem; padding-left: 3rem; padding-bottom: 6.8rem; position: relative; float: left;
+            width: 100%; margin-top: 10rem; padding-left: 3rem; padding-bottom: 6.8rem; position: relative; float: left;
             .hold{
                 position: fixed; top: 0; height: 100%; left: 0; width: 4rem;
                 img{
@@ -64,7 +64,7 @@
                 }
             }
             .driver{
-                position: absolute; top: 7.9rem; right: 4px;
+                position: absolute; top: -5.6rem; right: 4px;
                 img{
                     width: 4.4rem;
                 }
@@ -86,7 +86,7 @@
                             }
                         }
                         span{
-                            width: 4.4rem; height: 4.4rem; border-radius: 1rem 1rem 0 0; display: inline-block; margin: 0 0 0 0; background-color: #d9d9d9;
+                            width: 3em; height: 3rem; border-radius: .8rem .8rem 0 0; display: inline-block; margin: 0 0 0 0; background-color: #d9d9d9;
                             &.available{
                                 background-color: #d9d9d9;
                             }
@@ -112,4 +112,7 @@
 
 .button_back{
     width: 100%; float: left; padding:0 2.4rem 2.4rem; position: fixed; bottom: 0; left: 0; background-color: #202020;
+    ion-button{
+        height: 4.8rem;
+    }
 }

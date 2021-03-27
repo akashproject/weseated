@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HelpSupportPageRoutingModule } from './help-support-routing.module';
 
 import { HelpSupportPage } from './help-support.page';
+import { HelpSupportContentComponent } from 'src/app/all-components/my-profile-content/help-support-content/help-support-content.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { HelpSupportPage } from './help-support.page';
     IonicModule,
     HelpSupportPageRoutingModule
   ],
-  declarations: [HelpSupportPage]
+  declarations: [HelpSupportPage, HelpSupportContentComponent]
 })
 export class HelpSupportPageModule {}
