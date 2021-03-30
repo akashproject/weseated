@@ -53,7 +53,7 @@
       <h2>{{ availablity }} Bus Available</h2>
       <ion-card
         *ngFor="let item of busResult; let i = index"
-        routerLink="/bus-detail/{{ item.id }}"
+        (click)="addBusToCart(item)"
       >
         <ion-card-header>
           <ion-card-title>{{ item.title }}</ion-card-title>

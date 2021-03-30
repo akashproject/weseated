@@ -23,6 +23,7 @@
     "@ionic-native/http": "^5.31.1",
     "@ionic/angular": "^5.5.2",
     "@ionic/storage": "^2.3.1",
+    "com.razorpay.cordova": "git+https://github.com/razorpay/razorpay-cordova.git",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -39,6 +40,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "cordova-android": "^9.0.0",
+    "cordova-browser": "^6.0.0",
     "cordova-plugin-advanced-http": "^3.1.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.2",
@@ -73,10 +75,12 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-advanced-http": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "com.razorpay.cordova": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
 import { Router, NavigationExtras } from '@angular/router';
-
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-home-content',
   templateUrl: './home-content.component.html',
@@ -55,17 +55,20 @@ export class HomeContentComponent implements OnInit {
     start: any;
     end: any;
     date: any;
+    total_seats: any;
   } = {
     start: '',
     end: '',
     date: '',
+    total_seats: '',
   };
   navCtrl: any;
 
   constructor(
     private router: Router,
     private api: ApiService,
-    public util: UtilService
+    public util: UtilService,
+    private storage: Storage
   ) {}
 
   ngOnInit() {}

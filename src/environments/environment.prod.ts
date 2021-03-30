@@ -9,9 +9,9 @@
 */
 export const environment = {
   production: true,
-  baseURL: 'http://salils14.sg-host.com/wp-json/we-seated/v2/',
-  absUrl: 'http://salils14.sg-host.com',
-  mediaURL: 'http://salils14.sg-host.com/uploads/',
+  baseURL: 'https://salils14.sg-host.com/wp-json/we-seated/v2/',
+  absUrl: 'https://salils14.sg-host.com',
+  mediaURL: 'https://salils14.sg-host.com/uploads/',
   general: {
     symbol: '$',
     code: 'USD',

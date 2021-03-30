@@ -13,9 +13,9 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://salils14.sg-host.com/wp-json/we-seated/v2/',
-  mediaURL: 'http://salils14.sg-host.com/uploads/',
-  absUrl: 'http://salils14.sg-host.com',
+  baseURL: 'https://salils14.sg-host.com/wp-json/we-seated/v2/',
+  mediaURL: 'https://salils14.sg-host.com/uploads/',
+  absUrl: 'https://salils14.sg-host.com',
   general: {
     symbol: '$',
     code: 'USD',

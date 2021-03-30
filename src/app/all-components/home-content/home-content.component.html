@@ -4,11 +4,20 @@
     <h2>Where would you like to go?</h2>
   </div>
   <div class="book_now_cover">
-    <ion-slides pager="false" [options]="slideOptsBooking" *ngIf="!bookSelected">
+    <ion-slides
+      pager="false"
+      [options]="slideOptsBooking"
+      *ngIf="!bookSelected"
+    >
       <ion-slide>
         <div class="details">
           <h3>New Delhi to Mumbai</h3>
-          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+          <ion-button
+            expand="block"
+            color="custom"
+            shape="round"
+            (click)="cardBookNow()"
+          >
             Book Now
             <img src="assets/images/submit-arrow.png" alt="" />
           </ion-button>
@@ -17,7 +26,12 @@
       <ion-slide>
         <div class="details">
           <h3>New Delhi to Mumbai</h3>
-          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+          <ion-button
+            expand="block"
+            color="custom"
+            shape="round"
+            (click)="cardBookNow()"
+          >
             Book Now
             <img src="assets/images/submit-arrow.png" alt="" />
           </ion-button>
@@ -26,7 +40,12 @@
       <ion-slide>
         <div class="details">
           <h3>New Delhi to Mumbai</h3>
-          <ion-button expand="block" color="custom" shape="round" (click)="cardBookNow()">
+          <ion-button
+            expand="block"
+            color="custom"
+            shape="round"
+            (click)="cardBookNow()"
+          >
             Book Now
             <img src="assets/images/submit-arrow.png" alt="" />
           </ion-button>
@@ -34,7 +53,7 @@
       </ion-slide>
     </ion-slides>
   </div>
-  
+
   <!-- <div class="search_bar_cover" *ngIf="!bookSelected">
     <div class="searcbar_content_back">
       <form action="">
@@ -107,7 +126,6 @@
                     displayFormat="YYYY-MM-DD"
                     pickerFormat="YYYY-MM-DD"
                     [(ngModel)]="busFilter.date"
-                    value="1994-12-15"
                     min="2021"
                     max="2031"
                     name="date"
@@ -119,7 +137,13 @@
                   <div class="icon-back">
                     <img src="assets/images/s2.png" alt="" />
                   </div>
-                  <ion-select value="1" okText="Okay" cancelText="Dismiss">
+                  <ion-select
+                    value="1"
+                    okText="Okay"
+                    cancelText="Dismiss"
+                    name="total_seats"
+                    [(ngModel)]="busFilter.total_seats"
+                  >
                     <ion-select-option value="1">1</ion-select-option>
                     <ion-select-option value="2">2</ion-select-option>
                     <ion-select-option value="3">3</ion-select-option>

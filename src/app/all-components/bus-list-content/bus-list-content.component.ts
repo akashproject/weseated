@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-bus-list-content',
   templateUrl: './bus-list-content.component.html',
@@ -16,7 +16,8 @@ export class BusListContentComponent implements OnInit {
     public activatedRoute: ActivatedRoute,
     private router: Router,
     private api: ApiService,
-    public util: UtilService
+    public util: UtilService,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -46,5 +47,27 @@ export class BusListContentComponent implements OnInit {
         this.util.errorToast(this.util.getString('Something went wrong'));
       }
     );
+  }
+
+  addBusToCart(params) {
+    console.log(params.price);
+    console.log(this.data);
+
+    let addBustoModel = {
+      bus_id: params.id,
+      wbtm_bus_id: params.id,
+      is_return: '',
+      wbtm_start_stops: this.data.start,
+      wbtm_end_stops: this.data.end,
+      wbtm_journey_date: this.data.date,
+      wbtm_journey_time: this.data.date,
+      wbtm_bus_time: this.data.date,
+      wbtm_total_seats: this.data.total_seats,
+      wbtm_seat_original_fare: params.price[0].wbtm_bus_price,
+      wbtm_seat_return_fare: '',
+    };
+    this.storage.set('orderModel', addBustoModel);
+
+    this.router.navigate(['bus-detail', { id: params.id }]);
   }
 }
