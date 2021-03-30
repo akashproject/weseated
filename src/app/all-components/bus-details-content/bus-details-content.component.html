@@ -72,7 +72,14 @@
       </ul> -->
       <ul class="booking" *ngFor="let item of seats; let i = index">
         <li *ngFor="let seat of item" (click)="toggleSeat(seat)">
-          <span *ngIf="seat"></span>
+          <ng-template *ngIf="seat; then seatblock else blankblock"></ng-template>
+          <ng-template #seatblock>            
+            <span class="seat"></span>
+          </ng-template>
+          <ng-template #blankblock>
+            <span class="blank_seat"></span>
+          </ng-template>
+          <!--<span *ngIf="seat"></span>-->
         </li>
       </ul>
     </div>
