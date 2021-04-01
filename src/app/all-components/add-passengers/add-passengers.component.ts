@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { UtilService } from '../../services/util.service';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 declare var RazorpayCheckout: any;
 @Component({
@@ -13,111 +14,96 @@ export class AddPassengersComponent implements OnInit {
   data: any;
   myId = null;
   seats: any;
+  seatfare = '';
   busDetail: any = [];
   selectedSeat: any = [];
   p_click_l1_open: boolean = false;
   p_click_l13_open: boolean = false;
+  totalPrice: '';
   orderModel: any = {
-    wbtm_seats: [
-      {
-        wbtm_seat_name: '1',
-      },
-      {
-        wbtm_seat_name: '2',
-      },
-    ],
+    wbtm_seats: [],
     wbtm_start_stops: 'Korunamoyee',
     wbtm_end_stops: 'Burdwan',
     wbtm_journey_date: '2021-03-27',
     wbtm_journey_time: '6.00',
     wbtm_bus_time: '6.00',
     wbtm_total_seats: '0',
-    wbtm_seat_original_fare: '200',
-    wbtm_seat_return_fare: '200',
+    wbtm_seat_original_fare: '',
+    wbtm_seat_return_fare: '',
     is_return: '',
     wbtm_billing_type: '',
     wbtm_city_zone: '',
     wbtm_pickpoint: 'Karunamoyee [6.00]',
-    wbtm_passenger_info: [
-      {
-        wbtm_user_name: 'Shourya',
-        wbtm_user_email: 'magentoshourya@gmail.com',
-        wbtm_user_phone: '9104438925',
-        wbtm_extra_bag_qty: '0',
-        wbtm_extra_bag_price: '0',
-      },
-      {
-        wbtm_user_name: 'Shourya',
-        wbtm_user_email: 'magentoshourya@gmail.com',
-        wbtm_user_phone: '9104438925',
-        wbtm_extra_bag_qty: '0',
-        wbtm_extra_bag_price: '0',
-      },
-    ],
-    wbtm_single_passenger_info: [
-      {
-        wbtm_user_name: 'Shourya',
-        wbtm_user_email: 'magentoshourya@gmail.com',
-        wbtm_user_phone: '9104438925',
-        wbtm_extra_bag_qty: '0',
-        wbtm_extra_bag_price: '0',
-      },
-      {
-        wbtm_user_name: 'Shourya',
-        wbtm_user_email: 'magentoshourya@gmail.com',
-        wbtm_user_phone: '9104438925',
-        wbtm_extra_bag_qty: '0',
-        wbtm_extra_bag_price: '0',
-      },
-    ],
-    wbtm_basic_passenger_info: [
-      {
-        wbtm_seat_fare: '100',
-        wbtm_passenger_type: 'Adult',
-      },
-      {
-        wbtm_seat_fare: '100',
-        wbtm_passenger_type: 'Adult',
-      },
-    ],
-    wbtm_tp: '200',
-    wbtm_bus_id: '55',
-    line_total: '200',
-    line_subtotal: '200',
-    bus_id: '55',
+    wbtm_passenger_info: [],
+    wbtm_single_passenger_info: [],
+    wbtm_basic_passenger_info: [],
+    wbtm_tp: '',
+    wbtm_bus_id: '',
+    line_total: '',
+    line_subtotal: '',
+    bus_id: '',
   };
   constructor(
     public activatedRoute: ActivatedRoute,
     private router: Router,
     private api: ApiService,
     public util: UtilService,
-    private storage: Storage
+    private storage: Storage,
+    private formBuilder: FormBuilder
   ) {}
 
+  newPassegner() {
+    let pass: any = {
+      wbtm_user_name: 'Test',
+      wbtm_user_email: 'Test@example.com',
+      wbtm_user_phone: '9836555023',
+      wbtm_extra_bag_qty: '0',
+      wbtm_extra_bag_price: '0',
+    };
+    return pass;
+  }
   ngOnInit() {
-    console.log('static', this.orderModel);
-
     this.activatedRoute.queryParams.subscribe((params) => {
-      if (params && params.special) {
+      if (params && params.seat) {
         //store the temp in data
-        this.data = JSON.parse(params.special);
+        this.data = JSON.parse(params.seat);
+        this.seatfare = JSON.parse(params.price);
       }
     });
-    this.storage.get('orderModel').then((data) => {
-      if (data) {
-        this.orderModel = data;
-      }
-    });
-    let arr = [];
+    let seatArray = [];
+    let priceArray = [];
+    let totalP: number = 0;
     for (let i in this.data) {
-      let obj = { wbtm_seat_name: this.data[i] };
-      arr.push(obj);
+      totalP = totalP + parseInt(this.seatfare);
+      let seatobj = { wbtm_seat_name: this.data[i] };
+      let priceObj = {
+        wbtm_seat_fare: this.seatfare,
+        wbtm_passenger_type: 'Adult',
+      };
+      seatArray.push(seatobj);
+      priceArray.push(priceObj);
+      this.orderModel.wbtm_single_passenger_info.push(this.newPassegner());
     }
-    this.orderModel.wbtm_seats = arr;
+    this.orderModel.wbtm_seats = seatArray;
+    this.orderModel.wbtm_basic_passenger_info = priceArray;
+    this.orderModel.wbtm_tp = this.orderModel.line_total = this.orderModel.line_subtotal = this.orderModel.wbtm_seat_original_fare = totalP;
+    console.log(this.orderModel);
   }
 
   createOrder() {
-    this.api.createOrder('getarray').then(
+    this.orderModel.wbtm_passenger_info = this.orderModel.wbtm_single_passenger_info;
+    this.storage.get('orderModel').then((data) => {
+      if (data) {
+        for (let i in data) {
+          this.orderModel[i] = data[i];
+          // console.log('stor', i, data[i]);
+        }
+      }
+    });
+    let formData = { orderdata: this.orderModel };
+
+    console.log('sub', formData);
+    this.api.post('create-order', formData).subscribe(
       (data: any) => {
         console.log('response', data);
       },
@@ -134,7 +120,7 @@ export class AddPassengersComponent implements OnInit {
       image: 'https://i.imgur.com/3g7nmJC.png',
       currency: 'INR', // your 3 letter currency code
       key: 'rzp_test_oOGrPMPR1muNai', // your Key Id from Razorpay dashboard
-      amount: 100, // Payment amount in smallest denomiation e.g. cents for USD
+      amount: this.orderModel.wbtm_tp * 100, // Payment amount in smallest denomiation e.g. cents for USD
       name: 'Razorpay',
 
       prefill: {
@@ -155,7 +141,7 @@ export class AddPassengersComponent implements OnInit {
     var successCallback = (payment_id) => {
       console.log('razor success', payment_id);
       this.storage.set('payment_id', payment_id);
-      //this.createOrder();
+      this.createOrder();
     };
 
     var cancelCallback = function (error) {

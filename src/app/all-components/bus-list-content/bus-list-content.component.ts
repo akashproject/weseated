@@ -63,11 +63,13 @@ export class BusListContentComponent implements OnInit {
       wbtm_journey_time: this.data.date,
       wbtm_bus_time: this.data.date,
       wbtm_total_seats: this.data.total_seats,
-      wbtm_seat_original_fare: params.price[0].wbtm_bus_price,
       wbtm_seat_return_fare: '',
     };
     this.storage.set('orderModel', addBustoModel);
 
-    this.router.navigate(['bus-detail', { id: params.id }]);
+    this.router.navigate([
+      'bus-detail',
+      { id: params.id, price: params.price[0].wbtm_bus_price },
+    ]);
   }
 }

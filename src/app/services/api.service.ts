@@ -149,6 +149,8 @@ export class ApiService {
         .set('Basic', `${environment.authToken}`),
     };
     const param = this.JSON_to_URLEncoded(body);
+    console.log('post', param);
+
     return this.http.post(this.baseUrl + url, param, header);
   }
 

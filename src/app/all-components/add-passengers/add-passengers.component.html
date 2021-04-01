@@ -59,33 +59,39 @@
             <ion-icon name="chevron-down-outline"></ion-icon
           ></ion-card-title>
         </ion-card-header>
-        <ion-card-content *ngIf="p_click_l1_open">
+        <ion-card-content>
           <ion-grid>
             <ion-row>
               <ion-col size="12">
                 <ion-input
                   type="text"
                   placeholder="Enter Your Name"
+                  [(ngModel)]="
+                    this.orderModel.wbtm_single_passenger_info[i].wbtm_user_name
+                  "
                 ></ion-input>
               </ion-col>
             </ion-row>
             <ion-row>
-              <ion-col size="6">
-                <ion-input type="text" placeholder="Enter Your Age"></ion-input>
+              <ion-col size="12">
+                <ion-input
+                  type="text"
+                  placeholder="Enter Your Email"
+                  [(ngModel)]="
+                    this.orderModel.wbtm_single_passenger_info[i]
+                      .wbtm_user_email
+                  "
+                ></ion-input>
               </ion-col>
-              <ion-col size="6">
-                <ion-select
-                  value="Select Gender"
-                  okText="Okay"
-                  cancelText="Dismiss"
-                >
-                  <ion-select-option value="Select Gender"
-                    >Select Gender</ion-select-option
-                  >
-                  <ion-select-option value="Male">Male</ion-select-option>
-                  <ion-select-option value="Female">Female</ion-select-option>
-                  <ion-select-option value="Others">Others</ion-select-option>
-                </ion-select>
+              <ion-col size="12">
+                <ion-input
+                  type="text"
+                  placeholder="Enter Your Phone"
+                  [(ngModel)]="
+                    this.orderModel.wbtm_single_passenger_info[i]
+                      .wbtm_user_phone
+                  "
+                ></ion-input>
               </ion-col>
             </ion-row>
           </ion-grid>

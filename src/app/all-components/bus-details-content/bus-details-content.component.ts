@@ -12,6 +12,7 @@ export class BusDetailsContentComponent implements OnInit {
   data: any;
   myId = null;
   seats: any;
+  seatfare = '';
   busDetail: any = [];
   selectedSeat: any = [];
   active: boolean = false;
@@ -26,6 +27,7 @@ export class BusDetailsContentComponent implements OnInit {
 
   ngOnInit() {
     this.myId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.seatfare = this.activatedRoute.snapshot.paramMap.get('price');
     this.storage.get('orderModel').then((data) => {
       if (data) {
         this.addBustoModel = data;
@@ -82,20 +84,20 @@ export class BusDetailsContentComponent implements OnInit {
 
   toggleSeat(param) {
     console.log(param);
-
     const index = this.selectedSeat.indexOf(param);
     if (index > -1) {
       this.selectedSeat.splice(index, 1);
     } else {
       this.selectedSeat.push(param);
     }
-    this.addBustoModel.wbtm_total_seats = this.selectedSeat.length;
+    console.log(this.selectedSeat);
   }
 
   passengerinfo() {
     let navigationExtras: NavigationExtras = {
       queryParams: {
-        special: JSON.stringify(this.selectedSeat),
+        seat: JSON.stringify(this.selectedSeat),
+        price: JSON.stringify(this.seatfare),
       },
     };
     this.router.navigate(['passenger-info'], navigationExtras);
